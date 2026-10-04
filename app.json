@@ -1,15 +1,14 @@
 {
   "expo": {
-    "name": "blemesh_system",
-    "slug": "blemesh_system",
+    "name": "BLE Offline Chat",
+    "slug": "ble-offline-chat",
     "version": "1.0.0",
+    "platforms": ["android"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
+      "package": "com.bleofflinechat.prototype",
+      "permissions": ["android.permission.BLUETOOTH_ADVERTISE"],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -18,8 +17,9 @@
       },
       "predictiveBackGestureEnabled": false
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "plugins": [
+      ["react-native-ble-plx", { "neverForLocation": true }],
+      "./plugins/withLegacyBluetoothPermissionLimits"
+    ]
   }
 }
